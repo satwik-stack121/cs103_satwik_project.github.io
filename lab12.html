@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey and Feedback Form</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #00fffb, #0800ff);
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+  color: #000000;
+  margin-top: 30px;
+  text-shadow: 1px 1px 2px #fff;
+}
+.form-container {
+  max-width: 600px;
+  background-color: white;
+  margin: 40px auto;
+  padding: 30px 40px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.form-container:hover {
+  transform: scale(1.05);
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #000000;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s, transform 0.2s;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2196F3;
+  outline: none;
+  transform: scale(1.02);
+}
+.gender-group {
+  margin-top: 5px;
+}
+.gender-group input {
+  margin-right: 8px;
+}
+.rating {
+  margin-top: 10px;
+}
+.rating input {
+  margin-right: 5px;
+}
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.submit-btn {
+  display: block;
+  margin: 25px auto 0;
+  padding: 12px 25px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.submit-btn:hover {
+  background-color: #0b7dda;
+  transform: scale(1.05);
+}
+fieldset {
+  border: 2px solid #90caf9;
+
+  padding: 15px 20px;
+  margin-top: 20px;
+  background-color: #f5f9ff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+fieldset:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+legend {
+  font-weight: bold;
+  color: #1565c0;
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>Survey and Feedback Form</h1>
+
+  <div class="form-container">
+    <form>
+      <fieldset>
+        <legend>User Information</legend>
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" min="10" max="100" required>
+
+        <label>Gender:</label>
+        <div class="gender-group">
+          <label><input type="radio" name="gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Rate Your Experience</legend>
+
+        <label>Overall Experience:</label>
+        <div class="rating">
+          <label><input type="radio" name="experience" value="1"> 1</label>
+          <label><input type="radio" name="experience" value="2"> 2</label>
+          <label><input type="radio" name="experience" value="3"> 3</label>
+          <label><input type="radio" name="experience" value="4"> 4</label>
+          <label><input type="radio" name="experience" value="5"> 5</label>
+        </div>
+
+        <label for="satisfaction">Satisfaction Level:</label>
+        <select id="satisfaction">
+          <option>Very Satisfied</option>
+          <option>Satisfied</option>
+          <option>Neutral</option>
+          <option>Dissatisfied</option>
+          <option>Very Dissatisfied</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your Feedback</legend>
+
+        <label for="feedback">Tell us about your experience:</label>
+        <textarea id="feedback" placeholder="Write your feedback here..."></textarea>
+
+        <label for="suggestions">Any suggestions for improvement?</label>
+        <textarea id="suggestions" placeholder="Share your suggestions..."></textarea>
+      </fieldset>
+
+      <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+  </div>
+
+</body>
+</html>
